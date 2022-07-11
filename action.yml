@@ -14,9 +14,12 @@ inputs:
     required: false
     default: "**/dist/**"
   registry:
-    description: "Optional. The NPM registry URL. If not provided, defaults to https://npm.pkg.github.com"
+    description: "Optional. The NPM registry URL. If not provided, defaults to npm.pkg.github.com"
     required: false
-    default: "https://npm.pkg.github.com"
+    default: "npm.pkg.github.com"
+  scope:
+    description: "Required. The scope of the packages to publish. i.e., @salfatigroup"
+    required: true
 outputs:
   modules:
     description: "The list of published modules. e.g., @myorg/foo@0.1.0, @myorg/bar@1.0.0"
