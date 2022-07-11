@@ -1,0 +1,25 @@
+name: PublishMultiplePrivatePackagesToGitHub
+description: Automatically find and publish packages to GitHub NPM Packages
+author: SalfatiGroup
+branding:
+  icon: box
+  color: blue
+inputs:
+  scan:
+    description: "Optional. Find NPM packages in the given globs. If not provided, defaults to ./"
+    required: false
+    default: "./"
+  ignore:
+    description: "Optional. Ignore NPM packages in the given globs. Defaults to dist"
+    required: false
+    default: "**/dist/**"
+  registry:
+    description: "Optional. The NPM registry URL. If not provided, defaults to https://npm.pkg.github.com"
+    required: false
+    default: "https://npm.pkg.github.com"
+outputs:
+  modules:
+    description: "The list of published modules. e.g., @myorg/foo@0.1.0, @myorg/bar@1.0.0"
+runs:
+  using: node16
+  main: lib/index.js
